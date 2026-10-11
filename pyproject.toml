@@ -1,0 +1,41 @@
+[project]
+name = "support-fins"
+version = "0.2.0"
+description = "Add breakaway support fins to an STL so it prints in a strong orientation without slicer supports"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "conradbez", email = "conradbez1@gmail.com" }
+]
+keywords = ["3d-printing", "stl", "supports", "mesh", "trimesh"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+    "Environment :: Console",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "rtree>=1.0",
+    "scipy>=1.10",
+    "trimesh>=4.0",
+]
+
+[project.urls]
+Upstream = "https://github.com/gittrahan/support-fins"
+
+[project.scripts]
+support-fins = "support_fins:main"
+
+[build-system]
+requires = ["uv_build>=0.8.0,<0.9"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
